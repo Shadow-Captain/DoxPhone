@@ -9,6 +9,8 @@ INSTALACION
 
 `pip install -r requirements.txt`
 
+`pip install phonenumbers`
+
 `git clone https://github.com/Shadow-Captain/DoxPhone.git`
 
 `cd DoxPhone`
