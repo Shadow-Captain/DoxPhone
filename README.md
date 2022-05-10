@@ -5,10 +5,10 @@ Para poder ejecutarlo es necesario instalar la libreria phonenumbers de python.
 
 INSTALACION
 
-´pip install -r requirements.txt´
+`pip install -r requirements.txt`
 
-´git clone https://github.com/Shadow-Captain/DoxPhone.git´
+`git clone https://github.com/Shadow-Captain/DoxPhone.git`
 
-´cd Phone-dox´
+`cd Phone-dox`
 
-´python3 phone.py -u <(Código del país) + Numero de teléfono>´
+`python3 phone.py -u <(Código del país) + Numero de teléfono>`
