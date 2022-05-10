@@ -11,6 +11,6 @@ INSTALACION
 
 `git clone https://github.com/Shadow-Captain/DoxPhone.git`
 
-`cd Phone-dox`
+`cd DoxPhone`
 
-`python3 phone.py -u <(Código del país) + Numero de teléfono>`
+`python3 DoxPhone.py -u <(Código del país) + Numero de teléfono>`
