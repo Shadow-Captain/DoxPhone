@@ -13,4 +13,4 @@ INSTALACION
 
 `cd DoxPhone`
 
-`python3 DoxPhone.py -u <(Código del país) + Numero de teléfono>`
+`python3 DoxPhone.py -n (+521234567890)`
