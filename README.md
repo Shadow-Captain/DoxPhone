@@ -5,6 +5,8 @@ así como para saber si el número existe o no, esta activo o no, operadora y zo
 Para poder ejecutarlo es necesario instalar la libreria phonenumbers de python.
 
 
+
+```
 INSTALACION
 
 `pip install -r requirements.txt`
@@ -16,3 +18,4 @@ INSTALACION
 `cd DoxPhone`
 
 `python3 DoxPhone.py -n (+521234567890)`
+```
