@@ -11,16 +11,11 @@ CYAN = '\033[36m'
 WHITE = '\033[37m'
 RESET = '\033[39m'
 
-parse = argparse.ArgumentParser("Ingrese un numero de telefono con el codigo del pais. Ejemplo: -n +9997354128")
-parse.add_argument('-n', '--number', help="Numero de telefono")
-parse = parse.parse_args()
+time.sleep(2)
+os.system("clear")
 
-try:
-    if parse.number:
+print("""     
 
-        banner = """
-        
-      
 ██████╗░░█████╗░██╗░░██╗
 ██╔══██╗██╔══██╗╚██╗██╔╝
 ██║░░██║██║░░██║░╚███╔╝░
@@ -35,8 +30,14 @@ try:
 ██║░░░░░██║░░██║╚█████╔╝██║░╚███║███████╗
 ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═╝░░╚══╝╚══════╝
 
-        """
-        
+""")
+
+parse = argparse.ArgumentParser("Ingrese un numero de telefono con el codigo del pais. Ejemplo: -n +9997354128")
+parse.add_argument('-n', '--number', help="Numero de telefono")
+parse = parse.parse_args()
+
+try:
+    if parse.number:
         print(GREEN + banner + RESET)
 
         parse.number = phonenumbers.parse(parse.number)
