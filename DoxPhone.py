@@ -1,8 +1,5 @@
 import phonenumbers, argparse  
 from phonenumbers import carrier, geocoder, timezone
-
-argparse.system("clear")
-argparse.system("date")
 print("""     
 
 ██████╗░░█████╗░██╗░░██╗
