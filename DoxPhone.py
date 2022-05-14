@@ -1,5 +1,3 @@
-from curses import COLOR_CYAN
-from turtle import _AnyColor
 import phonenumbers, argparse  
 from phonenumbers import carrier, geocoder, timezone
 
