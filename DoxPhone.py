@@ -1,6 +1,6 @@
 import phonenumbers, argparse  
 from phonenumbers import carrier, geocoder, timezone
-print("""     
+banner = """
 
 ██████╗░░█████╗░██╗░░██╗
 ██╔══██╗██╔══██╗╚██╗██╔╝
@@ -15,8 +15,8 @@ print("""
 ██╔═══╝░██╔══██║██║░░██║██║╚████║██╔══╝░░
 ██║░░░░░██║░░██║╚█████╔╝██║░╚███║███████╗
 ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═╝░░╚══╝╚══════╝
-
-""")
+"""
+print(GREEN = banner)
 
 BLACK = '\033[30m'
 RED = '\033[31m'
