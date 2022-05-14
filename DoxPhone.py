@@ -1,18 +1,8 @@
 import phonenumbers, argparse  
 from phonenumbers import carrier, geocoder, timezone
 
-BLACK = '\033[30m'
-RED = '\033[31m'
-GREEN = '\033[32m'
-YELLOW = '\033[33m'
-BLUE = '\033[34m'
-MAGENTA = '\033[35m'
-CYAN = '\033[36m'
-WHITE = '\033[37m'
-RESET = '\033[39m'
-
-os.system("clear")
-os.system("date")
+argparse.system("clear")
+argparse.system("date")
 print("""     
 
 ██████╗░░█████╗░██╗░░██╗
@@ -31,14 +21,22 @@ print("""
 
 """)
 
+BLACK = '\033[30m'
+RED = '\033[31m'
+GREEN = '\033[32m'
+YELLOW = '\033[33m'
+BLUE = '\033[34m'
+MAGENTA = '\033[35m'
+CYAN = '\033[36m'
+WHITE = '\033[37m'
+RESET = '\033[39m'
+
 parse = argparse.ArgumentParser("Ingrese un numero de telefono con el codigo del pais. Ejemplo: -n +9997354128")
 parse.add_argument('-n', '--number', help="Numero de telefono")
 parse = parse.parse_args()
 
 try:
     if parse.number:
-        print(GREEN + banner + RESET)
-
         parse.number = phonenumbers.parse(parse.number)
         hora = timezone.time_zones_for_number(parse.number)
         operadora = carrier.name_for_number(parse.number, "es")
