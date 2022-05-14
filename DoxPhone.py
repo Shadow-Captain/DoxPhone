@@ -11,9 +11,8 @@ CYAN = '\033[36m'
 WHITE = '\033[37m'
 RESET = '\033[39m'
 
-time.sleep(2)
 os.system("clear")
-
+os.system("date")
 print("""     
 
 ██████╗░░█████╗░██╗░░██╗
