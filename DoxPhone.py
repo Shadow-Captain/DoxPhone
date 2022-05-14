@@ -1,5 +1,8 @@
+from curses import COLOR_CYAN
+from turtle import _AnyColor
 import phonenumbers, argparse  
 from phonenumbers import carrier, geocoder, timezone
+
 banner = """
 
 ██████╗░░█████╗░██╗░░██╗
@@ -16,7 +19,7 @@ banner = """
 ██║░░░░░██║░░██║╚█████╔╝██║░╚███║███████╗
 ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═╝░░╚══╝╚══════╝
 """
-print(GREEN = banner)
+CYAN = '\r\n\r\n██████╗░░█████╗░██╗░░██╗\r\n██╔══██╗██╔══██╗╚██╗…'
 
 BLACK = '\033[30m'
 RED = '\033[31m'
