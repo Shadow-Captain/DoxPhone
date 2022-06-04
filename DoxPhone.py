@@ -1,8 +1,5 @@
-import argparse
-import requests, json
+import requests
 import pyfiglet
-import sys
-from sys import argv
 import os
 
 BLACK = '\033[30m'
@@ -46,22 +43,6 @@ api_key = '71c9a91b73291f84764eda1c5ccba175'
 number = int(input(GREEN+"Numero de telefono: "+RESET))
 
 data = requests.get("http://apilayer.net/api/validate?access_key=%s&number=%s&country_code&format=1" % (api_key, number))
-sys.stdout.flush()
-a = LGREEN+bold+"[$]"
-b = CYAN+bold+"[$]"
-print("")
-print('valid: ')
-print('number: ')
-print('local_format: ')
-print('international_format: ')
-print('country_prefix: ')
-print('country_code: ')
-print('country_name: ')
-print('location: ')
-print('carrier: ')
-print('line_type: ')
-
-print (" "+YELLOW)
 
 for key, value in data.json().items():
 
