@@ -42,7 +42,7 @@ print("")
 print(GREEN+"Escribe el numero de telefono junto\ncon el prefijo, ejemplo: +523313002435\n")
 # Información
 
-number = int(input(GREEN+"Numero de telefono: "+RESET))
+number = input(GREEN+"Numero de telefono: "+RESET)
 
 api_url = 'http://apilayer.net/api/validate?access_key=71c9a91b73291f84764eda1c5ccba175%s&number=%s&country_code&format=1'
 
