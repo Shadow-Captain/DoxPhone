@@ -51,8 +51,6 @@ sys.stdout.flush()
 a = LGREEN+bold+"[$]"
 b = CYAN+bold+"[$]"
 print("")
-print (a, "[Valido]:", data["valid"])
-print(red+"<--------------->"+red)
 print (b, "[Número]:", data["number"])
 print(red+"<--------------->"+red)
 print (a, "[Local]:", data["local_format"])
