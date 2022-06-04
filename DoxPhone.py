@@ -1,8 +1,26 @@
-import phonenumbers, argparse  
-from phonenumbers import carrier, geocoder, timezone
+import argparse
+import requests, json
+import pyfiglet
+import sys
+from sys import argv
+import os
 
-banner = """
+BLACK = '\033[30m'
+red = '\033[31m'
+bold = '\033[01m'
+GREEN = '\033[32m'
+YELLOW = '\033[33m'
+BLUE = '\033[34m'
+MAGENTA = '\033[35m'
+CYAN = '\033[36m'
+WHITE = '\033[37m'
+RESET = '\033[39m'
+LGREEN = '\033[92m'
 
+os.system("clear")
+print(YELLOW+
+
+"""
 ██████╗░░█████╗░██╗░░██╗
 ██╔══██╗██╔══██╗╚██╗██╔╝
 ██║░░██║██║░░██║░╚███╔╝░
@@ -16,44 +34,44 @@ banner = """
 ██╔═══╝░██╔══██║██║░░██║██║╚████║██╔══╝░░
 ██║░░░░░██║░░██║╚█████╔╝██║░╚███║███████╗
 ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═╝░░╚══╝╚══════╝
-"""
-CYAN = '\r\n\r\n██████╗░░█████╗░██╗░░██╗\r\n██╔══██╗██╔══██╗╚██╗…'
 
-BLACK = '\033[30m'
-RED = '\033[31m'
-GREEN = '\033[32m'
-YELLOW = '\033[33m'
-BLUE = '\033[34m'
-MAGENTA = '\033[35m'
-CYAN = '\033[36m'
-WHITE = '\033[37m'
-RESET = '\033[39m'
+""")
 
-parse = argparse.ArgumentParser("Ingrese un numero de telefono con el codigo del pais. Ejemplo: -n +9997354128")
-parse.add_argument('-n', '--number', help="Numero de telefono")
-parse = parse.parse_args()
+print(MAGENTA+"╚» Sʜᴀᴅᴏᴡ Cᴀᴘᴛᴀɪɴ ☬ «╝")
+print("")
+print(GREEN+"Escribe el numero de telefono junto\ncon el prefijo, ejemplo: +523313002435\n")
+# Información
 
-try:
-    if parse.number:
-        parse.number = phonenumbers.parse(parse.number)
-        hora = timezone.time_zones_for_number(parse.number)
-        operadora = carrier.name_for_number(parse.number, "es")
-        pais = geocoder.description_for_number(parse.number, "es")
-        n_valido = phonenumbers.is_valid_number(parse.number)
-        n_existe = phonenumbers.is_possible_number(parse.number)
-        print(CYAN + "Zona horaria: " + RESET, hora[0])
-        print(CYAN + "Operadora: " + RESET, operadora)
-        print(CYAN + "Pais: " + RESET, pais)
-        if n_valido:
-            print(CYAN + "El numero es valido: " + RESET, "SI")
-        else:
-            print(CYAN + "El numero es valido: " + RESET, "NO")
-        if n_existe:
-            print(CYAN + "Posibilidad que el numero exista: " + RESET, "SI")
-        else:
-            print(CYAN + "Posibilidad que el numero exista: " + RESET, "NO")
-    else:
-        print(CYAN + "\nUsage: python3 phone.py -n <Numero de telefono mas codigo del país>\nEjemplo: python3 phone.py -n +9997354128")
-        print(RED + "[!] No ha ingresado un numero de telefono")
-except Exception as e:
-    print(RED + "[!] La cadena proporcionada no parecía ser un número de teléfono.")
+api_key = '71c9a91b73291f84764eda1c5ccba175'
+api_url = 'http://apilayer.net/api/validate?access_key=%s&number=%s&country_code&format=1'
+number = int(input(GREEN+"Numero de telefono: "+RESET))
+
+data = requests.get(api_key+api_url+number)
+sys.stdout.flush()
+a = LGREEN+bold+"[$]"
+b = CYAN+bold+"[$]"
+print("")
+print (a, "[Valido]:", data['valid'])
+print(red+"<--------------->"+red)
+print (b, "[Número]:", data['number'])
+print(red+"<--------------->"+red)
+print (a, "[Local]:", data['local_format'])
+print(red+"<--------------->"+red)
+print (b, "[Internacional]:", data['international_format'])
+print(red+"<--------------->"+red)
+print (a, "[Prefijo]:", data['country_prefix'])
+print(red+"<--------------->"+red)
+print (b, "[Codigo de país]:", data['country_code'])
+print(red+"<--------------->"+red)
+print (a, "[País]:", data['country_name'])
+print(red+"<--------------->"+red)
+print (b, "[Ubicación]:", data['location'])
+print(red+"<--------------->"+red)
+print (a, "[Transportador]:", data['carrier'])
+print(red+"<--------------->"+red)
+print (b, "[Tipo de línea]:", data['line_type'])
+print(red+"<--------------->"+red)
+
+for key, value in data.json().items():
+
+    print("%s: %s" % (key, value))
