@@ -39,10 +39,9 @@ print("")
 print(GREEN+"Escribe el numero de telefono junto\ncon el prefijo, ejemplo: +0123456789\n")
 # Información
 
-api_key = '71c9a91b73291f84764eda1c5ccba175'
 number = int(input(GREEN+"Numero de telefono: "+RESET))
 print("")
-data = requests.get(CYAN+"http://apilayer.net/api/validate?access_key=%s&number=%s&country_code&format=1" % (api_key, number))
+data = requests.get("http://apilayer.net/api/validate?access_key=71c9a91b73291f84764eda1c5ccba175s&number=%s&country_code&format=1" % (number))
 
 for key, value in data.json().items():
 
