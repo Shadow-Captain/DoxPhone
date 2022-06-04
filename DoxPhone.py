@@ -42,11 +42,11 @@ print("")
 print(GREEN+"Escribe el numero de telefono junto\ncon el prefijo, ejemplo: +523313002435\n")
 # Información
 
-api_key = '71c9a91b73291f84764eda1c5ccba175'
-api_url = 'http://apilayer.net/api/validate?access_key=%s&number=%s&country_code&format=1'
 number = int(input(GREEN+"Numero de telefono: "+RESET))
 
-data = requests.get(api_key+api_url+number)
+api_url = 'http://apilayer.net/api/validate?access_key=71c9a91b73291f84764eda1c5ccba175%s&number=%s&country_code&format=1'
+
+data = requests.get(api_url+number)
 sys.stdout.flush()
 a = LGREEN+bold+"[$]"
 b = CYAN+bold+"[$]"
