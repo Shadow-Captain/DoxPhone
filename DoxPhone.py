@@ -51,6 +51,8 @@ sys.stdout.flush()
 a = LGREEN+bold+"[$]"
 b = CYAN+bold+"[$]"
 print("")
+print (a, "[Valido]:", data["valid"])
+print(red+"<--------------->"+red)
 print (b, "[Número]:", data["number"])
 print(red+"<--------------->"+red)
 print (a, "[Local]:", data["local_format"])
@@ -69,6 +71,7 @@ print (a, "[Transportador]:", data["carrier"])
 print(red+"<--------------->"+red)
 print (b, "[Tipo de línea]:", data["line_type"])
 print(red+"<--------------->"+red)
+print(""+YELLOW)
 
 for key, value in data.json().items():
 
