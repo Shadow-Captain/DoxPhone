@@ -3,8 +3,8 @@ import pyfiglet
 import os
 
 BLACK = '\033[30m'
-red = '\033[31m'
-bold = '\033[01m'
+RED = '\033[31m'
+BOLD = '\033[01m'
 GREEN = '\033[32m'
 YELLOW = '\033[33m'
 BLUE = '\033[34m'
@@ -36,13 +36,13 @@ print(YELLOW+
 
 print(MAGENTA+"╚» Sʜᴀᴅᴏᴡ Cᴀᴘᴛᴀɪɴ ☬ «╝")
 print("")
-print(GREEN+"Escribe el numero de telefono junto\ncon el prefijo, ejemplo: +523313002435\n")
+print(GREEN+"Escribe el numero de telefono junto\ncon el prefijo, ejemplo: +0123456789\n")
 # Información
 
 api_key = '71c9a91b73291f84764eda1c5ccba175'
 number = int(input(GREEN+"Numero de telefono: "+RESET))
-
-data = requests.get("http://apilayer.net/api/validate?access_key=%s&number=%s&country_code&format=1" % (api_key, number))
+print("")
+data = requests.get(CYAN+"http://apilayer.net/api/validate?access_key=%s&number=%s&country_code&format=1" % (api_key, number))
 
 for key, value in data.json().items():
 
